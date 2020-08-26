@@ -18,15 +18,13 @@ a{
     background-color: #ffffff;
     min-height: calc(100vh - 20px);
     max-width: 1100px;
-    margin: auto;
+    margin:0 auto;
 }
 
 /* Codido del menu sencillo */
 
  .sencillo ul{
     background-color: #034AA6;
-    margin: 0;
-    padding: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -90,6 +88,50 @@ li a{
 
 .menu-iconos .icon{
     flex: 0 1 2rem;
+}
+
+/* Codigo del menu desplegable */
+.menu-desplegable ul{
+    background-color: #034AA6;
+    display: flex;
+    flex-direction: column;
+}
+
+
+@media screen and (min-width:768px){
+    .menu-desplegable ul{
+        flex-direction: row;
+    }
+}
+
+.menu-desplegable ul li{
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (min-width:768px){
+  .menu-desplegable ul li{
+      position: relative;
+      display: flex;
+      flex: 1 1 100%;
+  }
+  .menu-desplegable ul li ul{
+    display: none;
+    position: absolute;
+    /* Esto va garantizar que se ponga debajo */
+    top: 100%;
+    left: 0;
+    background-color: #df7a06;
+    margin: 0px;
+    padding: 0px;
+  }
+  .menu-desplegable ul li:hover ul{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+  }
+ 
 }
 
 
